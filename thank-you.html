@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Благодарим ви! — site130</title>
+<meta name="robots" content="noindex, nofollow">
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '976438698521639');
+fbq('track', 'PageView');
+fbq('track', 'Lead');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=976438698521639&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #060818;
+    --primary: #ff4d00;
+    --accent: #5b5ef4;
+    --text: #f0f2ff;
+    --text2: rgba(240,242,255,0.65);
+    --green: #22c55e;
+  }
+
+  html, body {
+    height: 100%;
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    overflow: hidden;
+  }
+
+  /* Subtle background glow */
+  body::before {
+    content: '';
+    position: fixed;
+    top: -20%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(34,197,94,0.12) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .card {
+    text-align: center;
+    padding: 60px 48px;
+    max-width: 500px;
+    width: 90%;
+    background: linear-gradient(145deg, rgba(14,18,40,0.9), rgba(20,24,48,0.9));
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 24px;
+    box-shadow: 0 32px 80px rgba(0,0,0,0.5);
+    animation: fadeUp 0.6s ease forwards;
+    opacity: 0;
+    transform: translateY(24px);
+  }
+
+  @keyframes fadeUp {
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ── Checkmark SVG ── */
+  .check-wrap {
+    width: 96px;
+    height: 96px;
+    margin: 0 auto 32px;
+  }
+
+  .check-circle {
+    stroke: var(--green);
+    stroke-width: 3;
+    fill: none;
+    stroke-dasharray: 283;
+    stroke-dashoffset: 283;
+    animation: drawCircle 0.8s ease 0.4s forwards;
+    transform-origin: center;
+  }
+
+  .check-tick {
+    stroke: var(--green);
+    stroke-width: 4;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    fill: none;
+    stroke-dasharray: 60;
+    stroke-dashoffset: 60;
+    animation: drawTick 0.5s ease 1.1s forwards;
+  }
+
+  @keyframes drawCircle {
+    to { stroke-dashoffset: 0; }
+  }
+
+  @keyframes drawTick {
+    to { stroke-dashoffset: 0; }
+  }
+
+  /* Glow pulse after animation */
+  .check-wrap svg {
+    filter: drop-shadow(0 0 0px rgba(34,197,94,0));
+    animation: glowIn 0.5s ease 1.5s forwards;
+  }
+
+  @keyframes glowIn {
+    to { filter: drop-shadow(0 0 16px rgba(34,197,94,0.5)); }
+  }
+
+  h1 {
+    font-size: 1.9rem;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    margin-bottom: 16px;
+    line-height: 1.2;
+    opacity: 0;
+    animation: fadeIn 0.5s ease 1.4s forwards;
+  }
+
+  p {
+    font-size: 1rem;
+    color: var(--text2);
+    line-height: 1.7;
+    opacity: 0;
+    animation: fadeIn 0.5s ease 1.6s forwards;
+  }
+
+  .highlight { color: var(--text); font-weight: 700; }
+
+  .back-link {
+    display: inline-block;
+    margin-top: 36px;
+    padding: 12px 28px;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 50px;
+    color: var(--text2);
+    text-decoration: none;
+    font-size: 0.88rem;
+    font-weight: 600;
+    transition: background 0.2s, color 0.2s, border-color 0.2s;
+    opacity: 0;
+    animation: fadeIn 0.5s ease 1.8s forwards;
+  }
+
+  .back-link:hover {
+    background: rgba(255,255,255,0.1);
+    border-color: rgba(255,255,255,0.2);
+    color: var(--text);
+  }
+
+  @keyframes fadeIn {
+    to { opacity: 1; }
+  }
+
+  /* Logo top */
+  .logo {
+    position: fixed;
+    top: 24px;
+    left: 32px;
+    font-size: 1.1rem;
+    font-weight: 900;
+    letter-spacing: -0.5px;
+    text-decoration: none;
+    color: var(--text);
+  }
+  .logo span { color: var(--primary); }
+</style>
+</head>
+<body>
+
+<a href="/" class="logo">site<span>130</span></a>
+
+<div class="card">
+  <!-- Animated checkmark -->
+  <div class="check-wrap">
+    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <circle class="check-circle" cx="50" cy="50" r="45" />
+      <polyline class="check-tick" points="28,52 43,67 72,36" />
+    </svg>
+  </div>
+
+  <h1>Благодарим ви!</h1>
+  <p>
+    Получихме вашето запитване.<br>
+    Ще се свържем с вас <span class="highlight">до 18 часа</span> и ще ви покажем безплатното демо на вашия нов сайт.
+  </p>
+
+  <a href="/" class="back-link">← Обратно към началото</a>
+</div>
+
+</body>
+</html>
