@@ -1913,13 +1913,6 @@ function showToast(){
 }
 setTimeout(()=>{ showToast(); setInterval(showToast, 20000 + Math.random()*12000); }, 4000);
 
-// ── EXIT INTENT ──
-let exitShown = false;
-document.addEventListener('mouseleave', e=>{
-  if(e.clientY < 10 && !exitShown && !modal.classList.contains('active')){
-    exitShown = true; openModal();
-  }
-});
 
 // ── PULSE ANIMATION ──
 const s = document.createElement('style');
