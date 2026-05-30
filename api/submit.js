@@ -87,6 +87,26 @@ module.exports = async function handler(req, res) {
         const body = await r.text();
         throw new Error(`Twilio ${r.status}: ${body}`);
       }
+    })(),
+
+    // 3. Web3Forms — email notification to owner
+    (async () => {
+      const r = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          access_key: '99d13498-1cc8-431a-a17b-55cc1473b142',
+          subject: '🚀 Ново запитване от site130',
+          from_name: 'site130 Contact Form',
+          phone,
+          message: business_desc,
+          botcheck: ''
+        })
+      });
+      const data = await r.json();
+      if (!data.success) {
+        throw new Error(`Web3Forms error: ${data.message}`);
+      }
     })()
   ]);
 
