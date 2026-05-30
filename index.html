@@ -146,6 +146,44 @@ nav {
   0%,100%{opacity:1;transform:scale(1)}
   50%{opacity:0.6;transform:scale(0.8)}
 }
+@keyframes float-card {
+  0%,100%{ transform:translateY(0px); }
+  50%{ transform:translateY(-10px); }
+}
+/* h1 hero spans */
+.h1-strike {
+  color: #ef4444;
+  text-decoration: line-through;
+  text-decoration-color: #ef4444;
+  text-decoration-thickness: 3px;
+  font-style: normal;
+}
+.h1-answer {
+  font-size: 0.9em;
+  color: var(--text);
+}
+.h1-ul {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 4px;
+}
+.h1-ul::after {
+  content: '';
+  position: absolute;
+  bottom: -1px; left: 0; right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--accent), #818cf8);
+  border-radius: 3px;
+}
+.h1-gold {
+  color: var(--gold);
+  font-size: 1.08em;
+}
+.h1-year {
+  color: var(--text2);
+  font-weight: 700;
+  font-size: 0.75em;
+}
 #visitor-count { font-weight: 700; color: #fff; }
 
 /* ─── HERO ─── */
@@ -404,6 +442,8 @@ h2 {
   align-items: center;
   gap: 8px;
   font-size: 0.8rem;
+  animation: float-card 3.2s ease-in-out infinite;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.3);
 }
 .speed-num { font-size: 1.25rem; font-weight: 800; color: #22c55e; }
 .s-card-mobile {
@@ -417,6 +457,8 @@ h2 {
   align-items: center;
   gap: 8px;
   font-size: 0.8rem;
+  animation: float-card 3.2s ease-in-out infinite 1.6s;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.3);
 }
 .solution-list { list-style: none; display: flex; flex-direction: column; gap: 16px; }
 .solution-list li {
@@ -1089,8 +1131,8 @@ footer {
     <div class="hero-tag">⚡ Специална оферта — Май 2026</div>
 
     <h1>
-      Вашите конкуренти вече<br>
-      имат сайт. <span class="underline accent">А вие?</span>
+      Защо да плащате <span class="h1-strike">над 1000€</span> за уебсайт?<br>
+      <span class="h1-answer">Вземете <span class="h1-ul">премиум дизайн</span> за <span class="h1-gold">130€</span><span class="h1-year"> / година</span></span>
     </h1>
 
     <p class="hero-sub">
@@ -1589,6 +1631,15 @@ footer {
           Работим с вас докато сте напълно доволни — правим толкова промени, колкото са нужни. Ако по някаква причина изобщо не сме успели да ви угодим, връщаме парите. Рискът е изцяло наш.
         </div></div>
       </div>
+    </div>
+
+    <div class="text-center reveal" style="margin-top:48px;">
+      <button class="btn-primary cta-btn" style="font-size:1.05rem;padding:18px 44px;">
+        🎁 Искам безплатното си демо →
+      </button>
+      <p style="margin-top:12px;font-size:0.82rem;color:var(--text3);">
+        ⚠️ Само 3 места останали — отговаряме до 18 часа
+      </p>
     </div>
   </div>
 </section>
