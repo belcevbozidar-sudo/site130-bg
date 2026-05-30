@@ -97,13 +97,15 @@ module.exports = async function handler(req, res) {
         body: JSON.stringify({
           access_key: '99d13498-1cc8-431a-a17b-55cc1473b142',
           subject: '🚀 Ново запитване от site130',
-          from_name: 'site130 Contact Form',
+          name: 'Клиент от site130',
+          email: 'noreply@site130.bg',
           phone,
-          message: business_desc,
+          message: `Телефон: ${phone}\n\nОписание:\n${business_desc}`,
           botcheck: ''
         })
       });
       const data = await r.json();
+      console.log('[web3forms] response:', JSON.stringify(data));
       if (!data.success) {
         throw new Error(`Web3Forms error: ${data.message}`);
       }
