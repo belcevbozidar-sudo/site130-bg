@@ -17,7 +17,7 @@ s.parentNode.insertBefore(t,s)}(window, document,'script',
 'https://connect.facebook.net/en_US/fbevents.js');
 fbq('init', '976438698521639');
 fbq('track', 'PageView');
-fbq('track', 'Lead');
+// Lead се fire-ва след генериране на event_id (вижте скрипта в края на body)
 </script>
 <noscript><img height="1" width="1" style="display:none"
 src="https://www.facebook.com/tr?id=976438698521639&ev=PageView&noscript=1"
@@ -209,6 +209,34 @@ src="https://www.facebook.com/tr?id=976438698521639&ev=PageView&noscript=1"
 
   <a href="/" class="back-link">← Обратно към началото</a>
 </div>
+
+<script>
+(function () {
+  // ── Generate a unique event_id shared between browser pixel & CAPI ──
+  // Format: lead_{timestamp}_{random} — unique per page load
+  var eventId = 'lead_' + Date.now() + '_' + Math.random().toString(36).slice(2, 9);
+
+  // 1. Browser pixel Lead — with eventID for server-side deduplication
+  if (typeof fbq === 'function') {
+    fbq('track', 'Lead', {}, { eventID: eventId });
+  }
+
+  // 2. Server-side CAPI — fire & forget, same event_id
+  fetch('/api/conversions', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      event_id: eventId,
+      event_source_url: window.location.href,
+      client_user_agent: navigator.userAgent
+    })
+  }).then(function (r) {
+    if (!r.ok) r.json().then(function (d) { console.warn('[CAPI] error:', d); });
+  }).catch(function (e) {
+    console.warn('[CAPI] network error:', e.message);
+  });
+})();
+</script>
 
 </body>
 </html>
