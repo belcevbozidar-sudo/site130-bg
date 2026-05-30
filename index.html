@@ -1010,6 +1010,18 @@ footer {
   font-family: inherit;
 }
 .btn-submit:hover { transform: translateY(-1px); box-shadow: 0 12px 30px rgba(255,77,0,0.5); }
+.btn-submit.loading { opacity: 0.85; cursor: not-allowed; transform: none; }
+.btn-spinner {
+  display: inline-block;
+  width: 18px; height: 18px;
+  border: 2.5px solid rgba(255,255,255,0.35);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: btn-spin 0.7s linear infinite;
+  vertical-align: middle;
+  margin-right: 8px;
+}
+@keyframes btn-spin { to { transform: rotate(360deg); } }
 .form-guarantee {
   text-align: center;
   margin-top: 14px;
@@ -1824,9 +1836,10 @@ document.getElementById('contact-form').addEventListener('submit', async functio
   if(!desc || !phone) return;
 
   const btn = this.querySelector('.btn-submit');
-  const originalText = btn.textContent;
-  btn.textContent = 'Изпращане...';
+  const originalHTML = btn.innerHTML;
+  btn.innerHTML = '<span class="btn-spinner"></span> Изчакайте...';
   btn.disabled = true;
+  btn.classList.add('loading');
 
   try {
     const res = await fetch('/api/submit', {
@@ -1840,9 +1853,10 @@ document.getElementById('contact-form').addEventListener('submit', async functio
       throw new Error('Server error');
     }
   } catch(err) {
-    btn.textContent = '⚠️ Грешка — опитайте пак';
+    btn.innerHTML = '⚠️ Грешка — опитайте пак';
+    btn.classList.remove('loading');
     btn.disabled = false;
-    setTimeout(() => { btn.textContent = originalText; }, 3000);
+    setTimeout(() => { btn.innerHTML = originalHTML; }, 3000);
   }
 });
 
