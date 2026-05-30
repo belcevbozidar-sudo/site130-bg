@@ -402,6 +402,7 @@ h2 {
   flex-direction: column;
   overflow: hidden;
   position: relative;
+  transform: translateY(24px);
 }
 .s-browser-bar {
   background: rgba(255,255,255,0.05);
@@ -878,6 +879,22 @@ footer {
   font-size: 0.85rem;
 }
 .footer-logo { font-size: 1.1rem; font-weight: 900; color: var(--text2); margin-bottom: 8px; }
+.footer-links {
+  margin-top: 14px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.footer-links a {
+  color: var(--text3);
+  text-decoration: none;
+  font-size: 0.8rem;
+  transition: var(--t);
+}
+.footer-links a:hover {
+  color: var(--text2);
+}
 
 /* ─── MODAL ─── */
 .modal-overlay {
@@ -1163,11 +1180,11 @@ footer {
 <div id="stats">
   <div class="stats-grid">
     <div class="reveal">
-      <div class="stat-num" data-count="57">0</div>
+      <div class="stat-num" data-count="247">0</div>
       <div class="stat-label">Изградени уебсайта</div>
     </div>
     <div class="reveal reveal-delay-1">
-      <div class="stat-num" data-count="98">0</div>
+      <div class="stat-num" data-count="99">0</div>
       <div class="stat-label">% доволни клиенти</div>
     </div>
     <div class="reveal reveal-delay-2">
@@ -1422,7 +1439,7 @@ footer {
     <div class="steps">
       <div class="step reveal reveal-delay-1">
         <div class="step-num">1</div>
-        <h3>Разговаряме</h3>
+        <h3>Описваш ни</h3>
         <p>Попълвате формата с кратко описание на бизнеса си. Ние го разглеждаме и изграждаме вашето безплатно демо.</p>
         <span class="step-time">🕐 До 24 часа</span>
       </div>
@@ -1684,7 +1701,12 @@ footer {
 <footer>
   <div class="footer-logo">site<span style="color:var(--primary)">130</span></div>
   <p>Професионални уебсайтове за малкия бизнес в България</p>
-  <p style="margin-top:8px;">© 2026 site130. Всички права запазени.</p>
+  <div class="footer-links">
+    <a href="privacy.html">Политика за поверителност</a>
+    <a href="cookies.html">Бисквитки</a>
+    <a href="terms.html">Общи условия</a>
+  </div>
+  <p style="margin-top:14px;">© 2026 site130. Всички права запазени.</p>
 </footer>
 
 <!-- MODAL -->
@@ -1719,7 +1741,7 @@ footer {
             type="tel"
             id="phone"
             name="phone"
-            placeholder="+359 8__ ___ ___"
+            placeholder="08.. ... ..."
             required
           >
         </div>

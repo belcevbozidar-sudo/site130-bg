@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Общи условия — site130</title>
+<meta name="description" content="Общи условия на site130 — Професионални уебсайтове за малкия бизнес в България.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #060818;
+  --bg2: #0a0f22;
+  --bg3: #0d1229;
+  --card: rgba(255,255,255,0.04);
+  --border: rgba(255,255,255,0.08);
+  --primary: #ff4d00;
+  --primary-h: #ff6520;
+  --accent: #5b5ef4;
+  --text: #ffffff;
+  --text2: #94a3b8;
+  --text3: #64748b;
+  --r: 16px;
+  --r-sm: 8px;
+  --t: 0.3s ease;
+  --max: 800px;
+}
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+::selection { background: var(--primary); color: #fff; }
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 3px; }
+
+/* Background Glows */
+.hero-glow {
+  position: absolute;
+  top: -200px; left: 50%;
+  transform: translateX(-50%);
+  width: 800px; height: 800px;
+  background: radial-gradient(circle, rgba(91,94,244,0.1) 0%, transparent 70%);
+  z-index: -1;
+  pointer-events: none;
+}
+.hero-glow2 {
+  position: absolute;
+  top: 100px; left: 20%;
+  width: 600px; height: 600px;
+  background: radial-gradient(circle, rgba(255,77,0,0.05) 0%, transparent 70%);
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Navigation */
+nav {
+  background: rgba(6,8,24,0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+  padding: 18px 24px;
+  position: sticky;
+  top: 0;
+  z-index: 900;
+}
+.nav-inner {
+  max-width: 1160px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.logo {
+  font-size: 1.3rem;
+  font-weight: 900;
+  letter-spacing: -1px;
+  text-decoration: none;
+  color: #fff;
+}
+.logo .s { color: var(--primary); }
+.logo .num {
+  background: linear-gradient(135deg, #ffb800, #ffe870);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.btn-back {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 8px 18px;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: pointer;
+  text-decoration: none;
+  transition: var(--t);
+}
+.btn-back:hover {
+  background: var(--primary);
+  border-color: var(--primary);
+  transform: translateY(-1px);
+  box-shadow: 0 0 20px rgba(255,77,0,0.3);
+}
+
+/* Layout */
+.wrapper {
+  max-width: var(--max);
+  margin: 60px auto;
+  padding: 0 24px;
+}
+.card {
+  background: linear-gradient(145deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+  border: 1px solid rgba(255,255,255,0.06);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: var(--r);
+  padding: 48px 40px;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+}
+h1 {
+  font-size: 2.2rem;
+  font-weight: 900;
+  letter-spacing: -0.5px;
+  margin-bottom: 12px;
+  background: linear-gradient(135deg, #ffffff, var(--text2));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.update-date {
+  font-size: 0.85rem;
+  color: var(--text3);
+  margin-bottom: 32px;
+}
+h2 {
+  font-size: 1.4rem;
+  font-weight: 800;
+  margin-top: 36px;
+  margin-bottom: 16px;
+  color: var(--text);
+  border-left: 3px solid var(--primary);
+  padding-left: 12px;
+}
+p {
+  color: var(--text2);
+  margin-bottom: 18px;
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+ul {
+  margin-left: 20px;
+  margin-bottom: 18px;
+  color: var(--text2);
+  font-size: 0.95rem;
+}
+li {
+  margin-bottom: 8px;
+}
+strong {
+  color: var(--text);
+}
+
+/* Footer */
+footer {
+  background: #020409;
+  border-top: 1px solid var(--border);
+  padding: 40px 24px;
+  text-align: center;
+  color: var(--text3);
+  font-size: 0.85rem;
+  margin-top: 100px;
+}
+
+@media(max-width: 768px) {
+  .card { padding: 32px 20px; }
+  h1 { font-size: 1.8rem; }
+  .wrapper { margin: 30px auto; }
+}
+</style>
+</head>
+<body>
+
+<div class="hero-glow"></div>
+<div class="hero-glow2"></div>
+
+<!-- NAVIGATION -->
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="logo"><span class="s">site</span><span class="num">130</span></a>
+    <a href="index.html" class="btn-back">← Назад</a>
+  </div>
+</nav>
+
+<!-- MAIN CONTENT -->
+<div class="wrapper">
+  <div class="card">
+    <h1>Общи условия</h1>
+    <div class="update-date">Последна промяна: 30 май 2026 г.</div>
+
+    <p>Добре дошли в уебсайта на <strong>site130</strong>. Моля, запознайте се внимателно с нашите Общи условия за ползване на услугите и взаимодействие чрез платформата ни.</p>
+
+    <h2>1. Обхват на услугите</h2>
+    <p>site130 предоставя пълно обслужване по уеб разработка, дизайн, хостинг, регистрация на домейни, поддръжка и промени на корпоративни уебсайтове (тип landing page / едностранични сайтове) под формата на годишен абонамент.</p>
+    <ul>
+      <li><strong>Абонаментна цена:</strong> Цената от 130€ се заплаща на годишна база.</li>
+      <li><strong>Пакетът включва:</strong> Регистрация на един домейн (.com или .bg), високоскоростен хостинг за една година, инсталиране на SSL сертификат за сигурност, персонализиран дизайн, пълна оптимизация за мобилни устройства и безплатни промени на съдържанието при нужда.</li>
+    </ul>
+
+    <h2>2. Безплатно демо до 18 часа</h2>
+    <p>Ние предлагаме напълно безрискова възможност за нашите клиенти:</p>
+    <ul>
+      <li>След попълване на формата на сайта ни, вие получавате демонстрационна версия на вашия бъдещ уебсайт в рамките на 18 часа.</li>
+      <li>Демонстрацията се предоставя напълно безплатно и не ви ангажира с никакво плащане.</li>
+      <li>Плащането на годишния абонамент се извършва само ако харесате изработеното демо и решите да го пуснете онлайн за реална работа.</li>
+    </ul>
+
+    <h2>3. Права и задължения на потребителите</h2>
+    <p>Като клиент вие се съгласявате да предоставите вярна и коректна информация относно вашия бизнес с цел изграждане на качествен сайт. Вие носите отговорност за текстовете и изображенията, които ни предоставяте за публикуване на вашия сайт, и гарантирате, че те не нарушават авторски права или закони на Република България.</p>
+
+    <h2>4. Поддръжка и актуализации</h2>
+    <p>Безплатните промени, включени в абонамента от 130€/година, покриват промяна на съществуващи текстове, замяна или добавяне на нови снимки, промяна на контакти или цени. Добавянето на изцяло нови функционалности (например изграждане на онлайн магазин, сложни резервационни системи или калкулатори) се договарят отделно при съответното заплащане.</p>
+
+    <h2>5. Подновяване и прекратяване</h2>
+    <p>След изтичане на едногодишния период от абонамента, клиентът има възможност да го поднови за следващата година при същите преференциални условия от 130€. Ние изпращаме предупреждение за предстоящо подновяване 14 дни предварително. При липса на подновяване, сайтът се спира автоматично, без да се налагат никакви неустойки или допълнителни такси.</p>
+
+    <h2>6. Гаранция за удовлетвореност</h2>
+    <p>Ние работим по вашия сайт до пълното ви удовлетворение. Ако след пускането му и в рамките на първите 14 дни прецените, че сайтът не отговаря на вашите очаквания, ние се ангажираме да възстановим заплатената от вас сума в пълен размер.</p>
+
+    <h2>7. Контакти</h2>
+    <p>За въпроси относно общите условия, абонаментите или процеса на работа, моля свържете се с нас.</p>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 site130. Всички права запазени.</p>
+</footer>
+
+</body>
+</html>
