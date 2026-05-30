@@ -1013,10 +1013,47 @@ footer {
   .modal { padding: 32px 24px; }
   #toasts { left: 12px; bottom: 12px; }
   .nav-cta { padding: 8px 16px; font-size: 0.8rem; }
+
+  /* Hero mobile fix */
+  #hero {
+    min-height: unset;
+    padding: 32px 20px 40px;
+    align-items: flex-start;
+  }
+  #hero .inner { text-align: left; }
+  .live-badge {
+    margin-bottom: 16px;
+    font-size: 0.75rem;
+    padding: 5px 12px;
+  }
+  .hero-tag {
+    margin-bottom: 14px;
+    font-size: 0.72rem;
+    padding: 5px 12px;
+  }
+  h1 { margin-bottom: 16px; letter-spacing: -1px; }
+  .hero-sub {
+    margin: 0 0 22px;
+    font-size: 0.95rem;
+    text-align: left;
+  }
+  .price-badge {
+    margin-bottom: 22px;
+    padding: 12px 18px;
+    display: inline-flex;
+  }
+  .price-new { font-size: 2rem; }
+  .price-old { font-size: 0.875rem; }
+  .cta-group { margin-bottom: 24px; gap: 10px; }
+  .hero-trust {
+    justify-content: flex-start;
+    gap: 10px 18px;
+  }
+  .trust-item { font-size: 0.8rem; }
 }
 @media(max-width:480px){
-  .cta-group { flex-direction: column; align-items: center; }
-  .btn-primary, .btn-secondary { width: 100%; max-width: 320px; }
+  .cta-group { flex-direction: column; align-items: stretch; }
+  .btn-primary, .btn-secondary { width: 100%; text-align: center; }
   .toast { min-width: 230px; }
 }
 </style>
@@ -1060,7 +1097,7 @@ footer {
     </h1>
 
     <p class="hero-sub">
-      Докато четете това, <strong>потенциален клиент търси услугата ви в Google</strong> — и намери конкурент, защото вие нямате онлайн присъствие. Ние го решаваме за <strong>130€ на година</strong>.
+      Докато четете това, потенциален клиент решава дали да ви се обади — и <strong>отива при конкурент, защото той има сайт, а вие нямате</strong>. Сайтът е вашият продавач, работещ 24/7. Ние го правим за <strong>130€ на година</strong>.
     </p>
 
     <div class="price-badge">
@@ -1116,18 +1153,18 @@ footer {
     <div class="pain-grid">
       <div class="pain-card reveal reveal-delay-1">
         <div class="pain-icon">😤</div>
-        <h3>„Google не ме намира"</h3>
-        <p>93% от хората търсят онлайн, преди да вземат решение. Без сайт — вас ги няма за тях. Буквално.</p>
+        <h3>Изглеждате непрофесионални</h3>
+        <p>80% от хората проверяват бизнеса онлайн преди да се обадят. Намерят ли само телефон и нищо повече — предпочитат конкурент, който изглежда сериозен. Доверието се изгражда или губи онлайн.</p>
       </div>
       <div class="pain-card reveal reveal-delay-2">
         <div class="pain-icon">💸</div>
-        <h3>Конкурентите ви крадат клиенти</h3>
-        <p>Докато вие разчитате на препоръки, конкурентите ви с уебсайт получават запитвания 24/7 — дори докато спят.</p>
+        <h3>Конкурентите изглеждат по-надеждни</h3>
+        <p>Двама майстори: единият с красив сайт, услуги, цени и снимки — другият само с телефонен номер. Кому ще се обади клиентът? Отговорът е ясен — и той не е в ваша полза.</p>
       </div>
       <div class="pain-card reveal reveal-delay-3">
         <div class="pain-icon">😰</div>
         <h3>Мислите, че е скъпо и сложно</h3>
-        <p>Традиционните агенции искат 750–2500€ само за изработка. Плюс хостинг, плюс поддръжка... Ние сложихме всичко за 130€.</p>
+        <p>Традиционните агенции искат 750–2500€ само за изработка, след това хостинг, поддръжка, промени... Ние сложихме всичко в едно за 130€ на година.</p>
       </div>
       <div class="pain-card reveal reveal-delay-4">
         <div class="pain-icon">📵</div>
@@ -1149,9 +1186,9 @@ footer {
         <ul class="solution-list">
           <li><div><strong>Пълен дизайн по ваши предпочитания</strong>Работим заедно докато сайтът изглежда точно така, както го искате.</div></li>
           <li><div><strong>Работи перфектно на телефон и таблет</strong>Над 70% от потребителите влизат от мобилно устройство.</div></li>
-          <li><div><strong>Бърз като мълния</strong>Сайтовете ни зареждат под 2 секунди — Google обожава бързите сайтове.</div></li>
+          <li><div><strong>Бърз като мълния</strong>Зарежда под 2 секунди — клиентите не чакат и не напускат разочаровани.</div></li>
           <li><div><strong>Всичко включено в 130€/год</strong>Домейн, хостинг, SSL, промени, поддръжка — нула изненади.</div></li>
-          <li><div><strong>Безплатно демо до 18 часа</strong>Свържете се с нас и ще ви покажем демо на вашия сайт още същия ден.</div></li>
+          <li><div><strong>Безплатно демо до 18 часа</strong>Свържете се с нас и ще получите реален демо сайт за вашия бизнес още същия ден — без да сте платили нищо.</div></li>
         </ul>
       </div>
       <div class="reveal reveal-delay-2" style="position:relative;padding:30px 30px 50px 30px;">
@@ -1217,7 +1254,7 @@ footer {
       <div class="feature-card reveal reveal-delay-4">
         <div class="feature-icon">🔒</div>
         <h3>SSL сертификат</h3>
-        <p>Сигурна връзка (https://) — задължителна за доверие и Google.</p>
+        <p>Сигурна връзка (https://) — задължителна за доверие и съвременна онлайн сигурност.</p>
         <span class="feature-badge">Включено</span>
       </div>
       <div class="feature-card reveal">
@@ -1239,9 +1276,9 @@ footer {
         <span class="feature-badge">Включено</span>
       </div>
       <div class="feature-card reveal reveal-delay-3">
-        <div class="feature-icon">🔍</div>
-        <h3>SEO оптимизация</h3>
-        <p>Оптимизираме сайта за Google — повече видимост, повече клиенти.</p>
+        <div class="feature-icon">🏆</div>
+        <h3>Онлайн доверие</h3>
+        <p>Когато клиент потърси фирмата ви по ime, ще намери красив сайт — не пустота. Доверието се изгражда преди да сте казали и дума.</p>
         <span class="feature-badge">Включено</span>
       </div>
       <div class="feature-card reveal reveal-delay-4">
@@ -1359,7 +1396,7 @@ footer {
       <div class="step reveal reveal-delay-3">
         <div class="step-num">3</div>
         <h3>Сайтът е онлайн!</h3>
-        <p>Пускаме сайта. Вашият бизнес е вече видим в Google. Клиентите могат да ви намерят 24/7.</p>
+        <p>Пускаме сайта. Вашият бизнес вече е онлайн. Клиентите виждат услугите ви, цените и могат да се свържат с вас по всяко време.</p>
         <span class="step-time">🚀 Готово!</span>
       </div>
     </div>
@@ -1410,7 +1447,7 @@ footer {
       <div class="testi-card reveal reveal-delay-1">
         <div class="stars">★★★★★</div>
         <p class="testi-text">
-          Преди 6 месеца нямах сайт и разчитах само на препоръки. Сега получавам по <strong>3–5 нови запитвания седмично</strong> само от Google. И сайтът беше готов само за 2 дни — не можех да повярвам!
+          Преди 6 месеца нямах сайт и разчитах само на препоръки. Сега получавам по <strong>3–5 нови запитвания седмично</strong> — клиентите влизат в сайта, виждат услугите ми и се обаждат готови. Сайтът беше готов само за 2 дни!
         </p>
         <div class="testi-author">
           <div class="testi-avatar av1">М</div>
