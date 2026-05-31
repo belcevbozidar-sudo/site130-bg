@@ -89,7 +89,27 @@ module.exports = async function handler(req, res) {
       }
     })(),
 
-    // 3. Web3Forms — email notification to owner
+    // 3. Convex — persistent database storage
+    (async () => {
+      const convexUrl = 'https://agile-bandicoot-94.eu-west-1.convex.site/submit-form';
+      const secret = process.env.SITE130_SECRET || '';
+      const ip =
+        (req.headers['x-forwarded-for'] || '').split(',')[0].trim() ||
+        req.socket?.remoteAddress || '';
+      const r = await fetch(convexUrl, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'x-site130-secret': secret,
+        },
+        body: JSON.stringify({ phone, business_desc, ip }),
+      });
+      const data = await r.json();
+      console.log('[convex] response:', JSON.stringify(data));
+      if (!data.success) throw new Error(`Convex error: ${JSON.stringify(data)}`);
+    })(),
+
+    // 4. Web3Forms — email notification to owner
     (async () => {
       const r = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
